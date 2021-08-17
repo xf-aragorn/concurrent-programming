@@ -33,6 +33,13 @@ public class ReenterLockCondition implements Runnable {
         Thread.sleep(2000);
         lock.lock();
         condition.signal();
+        System.out.println("虽然signal了，但是还没有释放锁，休眠2秒");
+        Thread.sleep(2000);
+        //必须unlokc了，await的线程才能重新获得锁！
         lock.unlock();
+        System.out.println("signal后现在unlock了，main线程休眠2秒");
+        Thread.sleep(2000);
+        System.out.println("main线程休眠2秒结束");
+
     }
 }
