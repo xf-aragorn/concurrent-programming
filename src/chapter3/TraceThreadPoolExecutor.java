@@ -35,4 +35,3 @@ public class TraceThreadPoolExecutor extends ThreadPoolExecutor {
         return new Exception("Client stack trace");
     }
 }
-

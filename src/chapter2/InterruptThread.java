@@ -23,6 +23,6 @@ public class InterruptThread {
 
         thread.start();
         Thread.sleep(2000);
-        thread.interrupt();//½øĞĞÖĞ¶Ï²Ù×÷,µ«ÊÇ´Ë²Ù×÷Ã»ÓĞÈÎºÎÓ°Ïì
+        thread.interrupt();//è¿›è¡Œä¸­æ–­æ“ä½œ,ä½†æ˜¯æ­¤æ“ä½œæ²¡æœ‰ä»»ä½•å½±å“
     }
 }

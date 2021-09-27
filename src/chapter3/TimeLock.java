@@ -30,7 +30,7 @@ public class TimeLock implements Runnable {
     }
 
     /**
-     * 锁申请等待限时tryLock
+     * 閿佺敵璇风瓑寰呴檺鏃秚ryLock
      * @param args
      */
     public static void main(String args[]) {

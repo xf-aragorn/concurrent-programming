@@ -18,8 +18,8 @@ public class ReadWriteLockDemo {
     public Object handleRead(Lock lock) throws InterruptedException {
         try {
             lock.lock();
-            Thread.sleep(1000);//Ä£Äâ¶Á²Ù×÷
-            System.out.println("¶Á²Ù×÷:" + value);
+            Thread.sleep(1000);//æ¨¡æ‹Ÿè¯»æ“ä½œ
+            System.out.println("è¯»æ“ä½œ:" + value);
             return value;
         } finally {
             lock.unlock();
@@ -29,8 +29,8 @@ public class ReadWriteLockDemo {
     public void handleWrite(Lock lock, int index) throws InterruptedException {
         try {
             lock.lock();
-            Thread.sleep(1000);//Ä£ÄâĞ´²Ù×÷
-            System.out.println("Ğ´²Ù×÷:" + value);
+            Thread.sleep(1000);//æ¨¡æ‹Ÿå†™æ“ä½œ
+            System.out.println("å†™æ“ä½œ:" + value);
             value = index;
         } finally {
             lock.unlock();
@@ -43,7 +43,7 @@ public class ReadWriteLockDemo {
         Runnable readRunnable = new Runnable() {
             @Override
             public void run() {
-                //·Ö±ğÊ¹ÓÃÁ½ÖÖËøÀ´ÔËĞĞ,ĞÔÄÜ²î±ğºÜÖ±¹ÛµÄ¾ÍÌåÏÖ³öÀ´,Ê¹ÓÃ¶ÁĞ´Ëøºó¶Á²Ù×÷¿ÉÒÔ²¢ĞĞ,½ÚÊ¡ÁË´óÁ¿Ê±¼ä
+                //åˆ†åˆ«ä½¿ç”¨ä¸¤ç§é”æ¥è¿è¡Œ,æ€§èƒ½å·®åˆ«å¾ˆç›´è§‚çš„å°±ä½“ç°å‡ºæ¥,ä½¿ç”¨è¯»å†™é”åè¯»æ“ä½œå¯ä»¥å¹¶è¡Œ,èŠ‚çœäº†å¤§é‡æ—¶é—´
                 try {
                     demo.handleRead(readLock);
                     //demo.handleRead(lock);
@@ -57,7 +57,7 @@ public class ReadWriteLockDemo {
         Runnable writeRunnable = new Runnable() {
             @Override
             public void run() {
-                //·Ö±ğÊ¹ÓÃÁ½ÖÖËøÀ´ÔËĞĞ,ĞÔÄÜ²î±ğºÜÖ±¹ÛµÄ¾ÍÌåÏÖ³öÀ´
+                //åˆ†åˆ«ä½¿ç”¨ä¸¤ç§é”æ¥è¿è¡Œ,æ€§èƒ½å·®åˆ«å¾ˆç›´è§‚çš„å°±ä½“ç°å‡ºæ¥
                 try {
                     demo.handleWrite(writeLock, new Random().nextInt(100));
                     //demo.handleWrite(lock, new Random().nextInt(100));

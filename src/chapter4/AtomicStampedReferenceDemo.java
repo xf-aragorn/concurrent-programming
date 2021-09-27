@@ -18,11 +18,11 @@ public class AtomicStampedReferenceDemo {
                         Integer m = money.getReference();
                         if (m < 20) {
                             if (money.compareAndSet(m, m + 20, timestap, timestap + 1)) {
-                                System.out.println("Óà¶îĞ¡ÓÚ20Ôª,³äÖµ³É¹¦,Óà¶î:" + money.getReference() + "Ôª");
+                                System.out.println("ä½™é¢å°äº20å…ƒ,å……å€¼æˆåŠŸ,ä½™é¢:" + money.getReference() + "å…ƒ");
                                 break;
                             }
                         } else {
-                            System.out.println("Óà¶î´óÓÚ20,ÎŞĞè³äÖµ");
+                            System.out.println("ä½™é¢å¤§äº20,æ— éœ€å……å€¼");
                             break;
                         }
                     }
@@ -38,13 +38,13 @@ public class AtomicStampedReferenceDemo {
                         int timestap = money.getStamp();
                         Integer m = money.getReference();
                         if (m > 10) {
-                            System.out.println("½ğ¶î´óÓÚ10Ôª");
+                            System.out.println("é‡‘é¢å¤§äº10å…ƒ");
                             if (money.compareAndSet(m, m - 10, timestap, timestap + 1)) {
-                                System.out.println("³É¹¦Ïû·Ñ10Ôª,Óà¶î:" + money.getReference() + "Ôª");
+                                System.out.println("æˆåŠŸæ¶ˆè´¹10å…ƒ,ä½™é¢:" + money.getReference() + "å…ƒ");
                                 break;
                             }
                         } else {
-                            System.out.println("Ã»ÓĞ×ã¹»µÄ½ğ¶î");
+                            System.out.println("æ²¡æœ‰è¶³å¤Ÿçš„é‡‘é¢");
                             break;
                         }
                     }

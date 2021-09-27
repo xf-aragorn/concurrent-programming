@@ -1,7 +1,7 @@
 package chapter2;
 
 /**
- * ÕâÊÇÒ»¸ö´íÎóµÄ¼ÓËø·½Ê½
+ * è¿™æ˜¯ä¸€ä¸ªé”™è¯¯çš„åŠ é”æ–¹å¼
  * <p/>
  * Created by 13 on 2017/5/4.
  */
@@ -24,16 +24,16 @@ public class BadLockOnInteger implements Runnable {
     @Override
     public void run() {
         for (int j = 0; j < 1000000; j++) {
-            synchronized (i) {//ÕâÀïÍ¬²½µÄ²¢²»ÊÇÍ¬Ò»¸ö¶ÔÏó,ÒòÎªiÊÇÒÔInteger¹Ø¼ü×Ö´´½¨µÄ
-                //ÕıÈ·×ö·¨Ó¦¸ÃÊÇ synchronized (instance)
-//            synchronized (BadLockOnInteger.class){ //ÕâÒ²¿ÉÒÔ´ïµ½Ä¿µÄ
+            synchronized (i) {//è¿™é‡ŒåŒæ­¥çš„å¹¶ä¸æ˜¯åŒä¸€ä¸ªå¯¹è±¡,å› ä¸ºiæ˜¯ä»¥Integerå…³é”®å­—åˆ›å»ºçš„
+                //æ­£ç¡®åšæ³•åº”è¯¥æ˜¯ synchronized (instance)
+//            synchronized (BadLockOnInteger.class){ //è¿™ä¹Ÿå¯ä»¥è¾¾åˆ°ç›®çš„
                 i++;
             }
         }
     }
 
     /**
-     * µÃµ½µÄ½á¹û²¢²»ÊÇ2000000,ÔÚ¶àÏß³ÌµÄ²Ù×÷ÖĞ³öÏÖÁË´íÎó
+     * å¾—åˆ°çš„ç»“æœå¹¶ä¸æ˜¯2000000,åœ¨å¤šçº¿ç¨‹çš„æ“ä½œä¸­å‡ºç°äº†é”™è¯¯
      *
      * @param args
      * @throws InterruptedException

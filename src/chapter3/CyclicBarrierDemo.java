@@ -37,7 +37,7 @@ public class CyclicBarrierDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(soldier + ":ÈÎÎñÍê³É");
+            System.out.println(soldier + ":ä»»åŠ¡å®Œæˆ");
         }
     }
 
@@ -54,9 +54,9 @@ public class CyclicBarrierDemo {
         @Override
         public void run() {
             if (flag) {
-                System.out.println("Ë¾Áî:[Ê¿±ø" + N + "¸ö,ÈÎÎñÍê³É!");
+                System.out.println("å¸ä»¤:[å£«å…µ" + N + "ä¸ª,ä»»åŠ¡å®Œæˆ!");
             } else {
-                System.out.println("Ë¾Áî:[Ê¿±ø" + N + "¸ö,¼¯ºÏÍê±Ï!");
+                System.out.println("å¸ä»¤:[å£«å…µ" + N + "ä¸ª,é›†åˆå®Œæ¯•!");
                 flag = true;
             }
         }
@@ -68,13 +68,12 @@ public class CyclicBarrierDemo {
         Thread[] allSoldier = new Thread[N];
         boolean flag = false;
         CyclicBarrier cyclicBarrier = new CyclicBarrier(N, new BarrierRun(flag, N));
-        System.out.println("¼¯ºÏ¶ÓÎé!");
+        System.out.println("é›†åˆé˜Ÿä¼!");
         for (int i = 0; i < N; i++) {
-            System.out.println("Ê¿±ø" + i + "±¨µÀ!");
-            allSoldier[i] = new Thread(new Soldier(cyclicBarrier, "Ê¿±ø" + i));
+            System.out.println("å£«å…µ" + i + "æŠ¥é“!");
+            allSoldier[i] = new Thread(new Soldier(cyclicBarrier, "å£«å…µ" + i));
             allSoldier[i].start();
         }
     }
 }
-
 

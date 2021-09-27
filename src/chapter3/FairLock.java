@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class FairLock implements Runnable {
 
-//    public static ReentrantLock fairLock = new ReentrantLock(true);//ÉèÖÃtrueÖ¸¶¨ËøÊÇ¹«Æ½µÄ,Ò²¿ÉÒÔ²»ÉèÖÃ,·Ö±ğÔËĞĞ¹Û²ì¹«Æ½ËøÓë·Ç¹«Æ½Ëø¼äµÄÇø±ğ
+//    public static ReentrantLock fairLock = new ReentrantLock(true);//è®¾ç½®trueæŒ‡å®šé”æ˜¯å…¬å¹³çš„,ä¹Ÿå¯ä»¥ä¸è®¾ç½®,åˆ†åˆ«è¿è¡Œè§‚å¯Ÿå…¬å¹³é”ä¸éå…¬å¹³é”é—´çš„åŒºåˆ«
     public static ReentrantLock unfairLock = new ReentrantLock();
 
     @Override
@@ -16,7 +16,7 @@ public class FairLock implements Runnable {
             try {
 //                fairLock.lock();
                  unfairLock.lock();
-                System.out.println(Thread.currentThread().getName() + "»ñµÃËø");
+                System.out.println(Thread.currentThread().getName() + "è·å¾—é”");
             } finally {
 //                fairLock.unlock();
                  unfairLock.unlock();
@@ -25,9 +25,9 @@ public class FairLock implements Runnable {
     }
 
     /**
-     * ¹«Æ½ËøµÄÒ»¸öÌØµãÊÇ:²»»á²úÉú¼¢¶öÏÖÏó,Ö»ÒªÅÅ¶Ó×îÖÕ¶¼»áµÃµ½×ÊÔ´.
+     * å…¬å¹³é”çš„ä¸€ä¸ªç‰¹ç‚¹æ˜¯:ä¸ä¼šäº§ç”Ÿé¥¥é¥¿ç°è±¡,åªè¦æ’é˜Ÿæœ€ç»ˆéƒ½ä¼šå¾—åˆ°èµ„æº.
      * <p/>
-     * µ«ÊÇÊµÏÖ¹«Æ½ËøÒªÇóÏµÍ³Î¬»¤Ò»¸öÓĞĞò¶ÓÁĞ,Òò´Ë¹«Æ½ËøµÄÊµÏÖ³É±¾½Ï¸ß,ĞÔÄÜÏà¶ÔµÍÏÂ.
+     * ä½†æ˜¯å®ç°å…¬å¹³é”è¦æ±‚ç³»ç»Ÿç»´æŠ¤ä¸€ä¸ªæœ‰åºé˜Ÿåˆ—,å› æ­¤å…¬å¹³é”çš„å®ç°æˆæœ¬è¾ƒé«˜,æ€§èƒ½ç›¸å¯¹ä½ä¸‹.
      *
      * @param args
      */

@@ -14,7 +14,7 @@ public class FutureData implements Data {
         }
         this.realData = realData;
         isReady = true;
-        notifyAll();//RealDataÒÑ¾­±»×¢Èë,Í¨ÖªgetResult
+        notifyAll();//RealDataå·²ç»è¢«æ³¨å…¥,é€šçŸ¥getResult
     }
 
 

@@ -30,13 +30,13 @@ public class ArrayListMultiThread {
     }
 
     /**
-     * ArrayListÊÇÒ»¸öÏß³Ì²»°²È«µÄÈİÆ÷,¶àÏß³Ì²Ù×÷Ê±»á³öÏÖ³åÍ»,±¨´íĞÅÏ¢ÈçÏÂ:
+     * ArrayListæ˜¯ä¸€ä¸ªçº¿ç¨‹ä¸å®‰å…¨çš„å®¹å™¨,å¤šçº¿ç¨‹æ“ä½œæ—¶ä¼šå‡ºç°å†²çª,æŠ¥é”™ä¿¡æ¯å¦‚ä¸‹:
      * Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: 22
      * at java.util.ArrayList.add(ArrayList.java:441)
      * at chapter2.ArrayListMultiThread$AddThread.run(ArrayListMultiThread.java:27)
      * at java.lang.Thread.run(Thread.java:745)
      *
-     * VectorÊÇÒ»¸öÏß³Ì°²È«µÄÈİÆ÷,¿ÉÒÔ´úÌæArrayList
+     * Vectoræ˜¯ä¸€ä¸ªçº¿ç¨‹å®‰å…¨çš„å®¹å™¨,å¯ä»¥ä»£æ›¿ArrayList
      *
      * @param args
      * @throws InterruptedException

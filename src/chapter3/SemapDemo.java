@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 /**
- * ĞÅºÅÁ¿
+ * ä¿¡å·é‡
  * Created by 13 on 2017/5/5.
  */
 public class SemapDemo implements Runnable {
@@ -24,7 +24,7 @@ public class SemapDemo implements Runnable {
     }
 
     /**
-     * ×Ü¹²20¸öÏß³Ì,ÏµÍ³»áÒÔ5¸öÏß³ÌÒ»×éÎªµ¥Î»,ÒÀ´ÎÖ´ĞĞ²¢Êä³ö
+     * æ€»å…±20ä¸ªçº¿ç¨‹,ç³»ç»Ÿä¼šä»¥5ä¸ªçº¿ç¨‹ä¸€ç»„ä¸ºå•ä½,ä¾æ¬¡æ‰§è¡Œå¹¶è¾“å‡º
      *
      * @param args
      */

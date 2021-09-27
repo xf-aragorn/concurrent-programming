@@ -44,5 +44,5 @@ public class SimpleWaitAndNotify {
         thread2.start();
     }
 
-    //wait()·½·¨»áÊÍ·ÅÄ¿±ê¶ÔÏóµÄËø,¶øThread.sleep()·½·¨²»»áÊÍ·ÅÈÎºÎ×ÊÔ´.
+    //wait()æ–¹æ³•ä¼šé‡Šæ”¾ç›®æ ‡å¯¹è±¡çš„é”,è€ŒThread.sleep()æ–¹æ³•ä¸ä¼šé‡Šæ”¾ä»»ä½•èµ„æº.
 }

@@ -29,17 +29,17 @@ public class ReenterLockCondition implements Runnable {
         ReenterLockCondition reenterLockCondition = new ReenterLockCondition();
         Thread thread1 = new Thread(reenterLockCondition);
         thread1.start();
-        System.out.println("Ë¯Ãß2ÃëÖÓ");
+        System.out.println("ç¡çœ 2ç§’é’Ÿ");
         Thread.sleep(2000);
         lock.lock();
         condition.signal();
-        System.out.println("ËäÈ»signalÁË£¬µ«ÊÇ»¹Ã»ÓĞÊÍ·ÅËø£¬ĞİÃß2Ãë");
+        System.out.println("è™½ç„¶signaläº†ï¼Œä½†æ˜¯è¿˜æ²¡æœ‰é‡Šæ”¾é”ï¼Œä¼‘çœ 2ç§’");
         Thread.sleep(2000);
-        //±ØĞëunlokcÁË£¬awaitµÄÏß³Ì²ÅÄÜÖØĞÂ»ñµÃËø£¡
+        //å¿…é¡»unlokcäº†ï¼Œawaitçš„çº¿ç¨‹æ‰èƒ½é‡æ–°è·å¾—é”ï¼
         lock.unlock();
-        System.out.println("signalºóÏÖÔÚunlockÁË£¬mainÏß³ÌĞİÃß2Ãë");
+        System.out.println("signalåç°åœ¨unlockäº†ï¼Œmainçº¿ç¨‹ä¼‘çœ 2ç§’");
         Thread.sleep(2000);
-        System.out.println("mainÏß³ÌĞİÃß2Ãë½áÊø");
+        System.out.println("mainçº¿ç¨‹ä¼‘çœ 2ç§’ç»“æŸ");
 
     }
 }

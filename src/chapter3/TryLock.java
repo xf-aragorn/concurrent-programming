@@ -65,9 +65,9 @@ public class TryLock implements Runnable {
     }
 
     /**
-     * ��������в����˷ǳ����������ļ���˳��,����thread1��thread2�������ľ���������ȴ��Ӷ���������
+     * 上面代码中采用了非常容易死锁的加锁顺序,导致thread1和thread2由于锁的竞争而互相等待从而引起死锁
      *
-     * ʹ����tryLock��,�̲߳���һֱ�ȴ����ǲ�ͣ�ĳ���ȥ�������Դ,ֻ��Ҫ�ȴ�һ����ʱ��,�߳����ջ�������Ҫ����Դ
+     * 使用了tryLock后,线程不会一直等待而是不停的尝试去获得锁资源,只需要等待一定的时间,线程最终会获得所需要的资源
      *
      * @param args
      */

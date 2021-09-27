@@ -35,13 +35,13 @@ public class IntLock implements Runnable {
             if (lock2.isHeldByCurrentThread()) {
                 lock2.unlock();
             }
-            System.out.println(Thread.currentThread().getId() + ":Ïß³ÌÍË³ö");
+            System.out.println(Thread.currentThread().getId() + ":çº¿ç¨‹é€€å‡º");
         }
 
     }
 
     /**
-     * ÖĞ¶ÏÏìÓ¦lockInterruptibly
+     * ä¸­æ–­å“åº”lockInterruptibly
      *
      * @param args
      * @throws InterruptedException

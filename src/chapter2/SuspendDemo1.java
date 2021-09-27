@@ -9,13 +9,13 @@ import java.util.Set;
 
 /**
  * https://blog.csdn.net/LONG_Yi_1994/article/details/83143123
- *说明:
- *调用了suspend方法，将t0线程挂起，但是出现的问题是，t0.suspend方法之后的代码不执行了，搞了半天终于知道为什么了，
- *因为在t0里面使用了System.out.println方法了，查看println方法的源代码发现他是个同步的方法，加锁了，这个锁是哪个呢？
- *对就是PrintStream,在Main中的printCurrentAliveThread方法中用到了System.out.println方法，打断点才知道
- *搞了半天阻塞在这里了，因为我们知道suspend方法是不释放锁的，所以导致会阻塞在println方法中，但是有一个前提是t0线程和main线程
- *的println方法中拿到的是同一个锁，这时候在看一下System.out变量时一个static PrintStream，这时候就明了了，因为是static
- *所以对象是相同的，这两个线程拿到的System.out是同一个对象，所以这两个线程也是拿到的是相同的锁的。
+ *璇存槑:
+ *璋冪敤浜唖uspend鏂规硶锛屽皢t0绾跨▼鎸傝捣锛屼絾鏄嚭鐜扮殑闂鏄紝t0.suspend鏂规硶涔嬪悗鐨勪唬鐮佷笉鎵ц浜嗭紝鎼炰簡鍗婂ぉ缁堜簬鐭ラ亾涓轰粈涔堜簡锛�
+ *鍥犱负鍦╰0閲岄潰浣跨敤浜哠ystem.out.println鏂规硶浜嗭紝鏌ョ湅println鏂规硶鐨勬簮浠ｇ爜鍙戠幇浠栨槸涓悓姝ョ殑鏂规硶锛屽姞閿佷簡锛岃繖涓攣鏄摢涓憿锛�
+ *瀵瑰氨鏄疨rintStream,鍦∕ain涓殑printCurrentAliveThread鏂规硶涓敤鍒颁簡System.out.println鏂规硶锛屾墦鏂偣鎵嶇煡閬�
+ *鎼炰簡鍗婂ぉ闃诲鍦ㄨ繖閲屼簡锛屽洜涓烘垜浠煡閬搒uspend鏂规硶鏄笉閲婃斁閿佺殑锛屾墍浠ュ鑷翠細闃诲鍦╬rintln鏂规硶涓紝浣嗘槸鏈変竴涓墠鎻愭槸t0绾跨▼鍜宮ain绾跨▼
+ *鐨刾rintln鏂规硶涓嬁鍒扮殑鏄悓涓�涓攣锛岃繖鏃跺�欏湪鐪嬩竴涓婼ystem.out鍙橀噺鏃朵竴涓猻tatic PrintStream锛岃繖鏃跺�欏氨鏄庝簡浜嗭紝鍥犱负鏄痵tatic
+ *鎵�浠ュ璞℃槸鐩稿悓鐨勶紝杩欎袱涓嚎绋嬫嬁鍒扮殑System.out鏄悓涓�涓璞★紝鎵�浠ヨ繖涓や釜绾跨▼涔熸槸鎷垮埌鐨勬槸鐩稿悓鐨勯攣鐨勩��
  *
  */
 
@@ -24,7 +24,7 @@ public class SuspendDemo1 {
 
     public static void main(String[] args) {
         try {
-            //定义线程
+            //瀹氫箟绾跨▼
             Thread t0 = new Thread() {
                 public void run() {
                     try {
@@ -38,17 +38,17 @@ public class SuspendDemo1 {
                     }
                 }
             };
-            //开启线程
+            //寮�鍚嚎绋�
             t0.start();
-            //等待2s之后挂起线程t0
+            //绛夊緟2s涔嬪悗鎸傝捣绾跨▼t0
             Thread.sleep(2*1000);
-            //挂起线程
+            //鎸傝捣绾跨▼
             t0.suspend();
-            //打印当前的所有线程
+            //鎵撳嵃褰撳墠鐨勬墍鏈夌嚎绋�
             printCurrentAliveThread();
-            //等待2s之后恢复线程
+            //绛夊緟2s涔嬪悗鎭㈠绾跨▼
             Thread.sleep(2*1000);
-            //复活线程
+            //澶嶆椿绾跨▼
             t0.resume();
 
         } catch (Throwable t) {
@@ -60,7 +60,7 @@ public class SuspendDemo1 {
     }
 
     /**
-     * 打印当前线程
+     * 鎵撳嵃褰撳墠绾跨▼
      */
     public static void printCurrentAliveThread(){
         Map<Thread, StackTraceElement[]> maps = Thread.getAllStackTraces();
