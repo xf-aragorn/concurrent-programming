@@ -50,11 +50,11 @@ public class DeadLock extends Thread {
 
 
     public static void main(String args[]) throws InterruptedException {
-        DeadLock 哲学家A = new DeadLock(fork1);
-        DeadLock 哲学家B = new DeadLock(fork2);
+        DeadLock dA = new DeadLock(fork1);
+        DeadLock dB = new DeadLock(fork2);
 
-        哲学家A.start();
-        哲学家B.start();
+        dA.start();
+        dB.start();
 
         Thread.sleep(1000);
     }

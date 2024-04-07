@@ -14,7 +14,9 @@ public class ReenterLockCondition implements Runnable {
     public void run() {
 
         try {
+            System.out.println("线程开始尝试获取锁。。。");
             lock.lock();
+            System.out.println("线程已获取锁~");
             condition.await();
             System.out.println("Thread is going on");
         } catch (InterruptedException e) {
@@ -32,6 +34,7 @@ public class ReenterLockCondition implements Runnable {
         System.out.println("睡眠2秒钟");
         Thread.sleep(2000);
         lock.lock();
+        System.out.println("main线程已获取锁~");
         condition.signal();
         System.out.println("虽然signal了，但是还没有释放锁，休眠2秒");
         Thread.sleep(2000);
